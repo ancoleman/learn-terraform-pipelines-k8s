@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "infrastructure-pipelines-workshop"
+    organization = "PaloAltoNetworks-PSO"
 
     workspaces {
-      name = "anton-c-k8s"
+      name = "learn-terraform-pipelines-k8s"
     }
   }
 }
