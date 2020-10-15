@@ -1,5 +1,16 @@
 data "google_compute_zones" "available" {}
 
+resource "google_compute_network" "engineering" {
+  name = "k8s-pipelines"
+}
+
+resource "google_compute_subnetwork" "default" {
+  ip_cidr_range = "10.201.0.0/16"
+  name          = "default"
+  network       = google_compute_network.engineering.self_link
+}
+
+
 resource "google_container_cluster" "engineering" {
   name     = var.cluster_name
   location = data.google_compute_zones.available.names.0
