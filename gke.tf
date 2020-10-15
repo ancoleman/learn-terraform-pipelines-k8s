@@ -6,7 +6,7 @@ resource "google_compute_network" "engineering" {
 
 resource "google_compute_subnetwork" "default" {
   ip_cidr_range = "10.201.0.0/16"
-  name          = "default"
+  name          = "engineering-k8s"
   network       = google_compute_network.engineering.self_link
 }
 
