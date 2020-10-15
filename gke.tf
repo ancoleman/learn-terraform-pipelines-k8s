@@ -2,6 +2,7 @@ data "google_compute_zones" "available" {}
 
 resource "google_compute_network" "engineering" {
   name = "k8s-pipelines"
+  auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "default" {
